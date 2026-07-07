@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  
+  /* Serene Ayurveda Palette */
+  --color-brand-green-light: #f4f7f4;
+  --color-brand-green-50: #ecf3ec;
+  --color-brand-green-100: #d5e4d5;
+  --color-brand-green-200: #b2cbb2;
+  --color-brand-green-300: #88ac88;
+  --color-brand-green-400: #5e8c5e;
+  --color-brand-green-600: #3b6346;
+  --color-brand-green-700: #2d4c36;
+  --color-brand-green-800: #1f3525;
+  --color-brand-green-900: #142218;
+  
+  --color-brand-earth-50: #faf7f2;
+  --color-brand-earth-100: #f4ece1;
+  --color-brand-earth-200: #e8dbcd;
+  --color-brand-earth-300: #d6beab;
+  --color-brand-earth-400: #b08968;
+  --color-brand-earth-600: #9c6644;
+  --color-brand-earth-700: #7f5539;
+  --color-brand-earth-800: #5c3d2e;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-earth-50 text-stone-800 font-sans antialiased selection:bg-brand-green-100 selection:text-brand-green-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Custom Micro-animations & Styles */
+.hero-gradient {
+  background: radial-gradient(circle at 10% 20%, rgba(236, 243, 236, 0.8) 0%, rgba(250, 247, 242, 0.8) 90.1%);
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-sm rounded-2xl;
+}
+
+.glass-card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:border-brand-green-200/50 hover:bg-white/90;
+}
+
+/* Keyframes for soft pulse/floating */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Hide scrollbar utility for clean dashboards */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
